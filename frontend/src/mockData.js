@@ -86,7 +86,9 @@ export const testimonials = [
 
 export const compensationPlan = {
   membership: {
-    cost: "USD $30",
+    originalCost: "USD $40",
+    currentCost: "GRATIS",
+    promotion: "Aprovecha inscripción gratis por apertura",
     benefits: [
       "Acceso a todos los productos con descuento",
       "Comisiones por ventas directas",
