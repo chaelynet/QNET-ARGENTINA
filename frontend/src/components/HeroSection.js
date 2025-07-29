@@ -11,8 +11,11 @@ const HeroSection = () => {
 
   return (
     <section id="inicio" className="hero-section relative min-h-screen flex items-center">
-      {/* Background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-800/70"></div>
+      {/* Background overlay - Much darker for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-blue-900/90 to-black/80"></div>
+      
+      {/* Secondary overlay for extra darkness */}
+      <div className="absolute inset-0 bg-black/40"></div>
       
       {/* Background image */}
       <div 
@@ -24,14 +27,14 @@ const HeroSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="hero-title text-5xl md:text-7xl font-black mb-8 leading-tight drop-shadow-2xl">
             Construí tu negocio global 
-            <span className="text-orange-400 block">QNET desde Argentina</span>
+            <span className="text-orange-400 block text-shadow-lg">QNET desde Argentina</span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
+          <p className="hero-subtitle text-2xl md:text-3xl mb-10 text-white font-semibold max-w-3xl mx-auto drop-shadow-xl leading-relaxed">
             Únete a la red de marketing multinivel más exitosa del mundo. 
-            Sin inventario, sin límites geográficos, con productos premiados.
+            <span className="block mt-2 text-orange-300">Sin inventario, sin límites geográficos, con productos premiados.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
