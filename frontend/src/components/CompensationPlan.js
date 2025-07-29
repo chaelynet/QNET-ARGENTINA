@@ -18,14 +18,55 @@ const CompensationPlan = () => {
 
         {/* Membership Cost */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-blue-600 text-white rounded-lg p-8 shadow-xl">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <DollarSign size={32} />
-              <span className="text-4xl font-bold">
-                {compensationPlan.membership.cost}
-              </span>
+          <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
+            
+            {/* Promotion Alert */}
+            <div className="absolute -top-3 -right-3 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse shadow-lg">
+              ¡PROMOCIÓN!
             </div>
-            <p className="text-lg opacity-90">Inversión Inicial</p>
+            
+            <div className="relative z-10">
+              {/* Original Price - Crossed Out */}
+              <div className="mb-4">
+                <div className="relative inline-block">
+                  <span className="text-2xl font-bold text-gray-300 opacity-60">
+                    Inscripción {compensationPlan.membership.originalCost}
+                  </span>
+                  {/* Strike-through line */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-full h-1 bg-red-500 transform rotate-12 rounded-full shadow-lg"></div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Current Price - FREE */}
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <DollarSign size={32} className="text-green-400" />
+                <span className="text-5xl font-black text-green-400 drop-shadow-lg">
+                  {compensationPlan.membership.currentCost}
+                </span>
+              </div>
+              
+              {/* Promotion Message */}
+              <div className="bg-orange-500 text-white px-6 py-3 rounded-full mb-4 shadow-lg">
+                <p className="font-bold text-lg">
+                  🎉 {compensationPlan.membership.promotion}
+                </p>
+              </div>
+              
+              <p className="text-lg opacity-90 font-semibold">
+                ¡Solo por tiempo limitado!
+              </p>
+              
+              {/* Urgency indicator */}
+              <div className="mt-4 flex items-center justify-center gap-2 text-orange-300">
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
+                <span className="text-sm font-medium">Oferta por apertura en Argentina</span>
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-ping"></div>
+              </div>
+            </div>
           </div>
         </div>
 
