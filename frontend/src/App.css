@@ -1,34 +1,279 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Custom styles for QNET Argentina */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for QNET Colors */
+:root {
+  --qnet-blue: #0058A3;
+  --qnet-orange: #FF7F00;
+  --qnet-dark-blue: #003B6B;
+  --qnet-light-gray: #F8F8F8;
+  --qnet-text-primary: #333333;
+  --qnet-text-secondary: #555555;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  color: var(--qnet-text-primary);
+  background-color: #ffffff;
 }
 
-.App-link {
-    color: #61dafb;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Typography Sizes */
+h1, .hero-title {
+  font-size: 2.25rem; /* 36px */
+}
+
+h2 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+}
+
+body, .body-text {
+  font-size: 1rem; /* 16px */
+}
+
+/* Custom Components */
+.landing-page {
+  overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.nav-link {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--qnet-orange) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: var(--qnet-orange);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--qnet-blue) 0%, var(--qnet-dark-blue) 100%);
+}
+
+.hero-title {
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-btn-primary, .hero-btn-secondary {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Product Cards */
+.product-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e5e5;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 88, 163, 0.15);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--qnet-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--qnet-dark-blue);
+}
+
+/* Utility Classes */
+.text-qnet-blue {
+  color: var(--qnet-blue);
+}
+
+.text-qnet-orange {
+  color: var(--qnet-orange);
+}
+
+.bg-qnet-blue {
+  background-color: var(--qnet-blue);
+}
+
+.bg-qnet-orange {
+  background-color: var(--qnet-orange);
+}
+
+.border-qnet-blue {
+  border-color: var(--qnet-blue);
+}
+
+.border-qnet-orange {
+  border-color: var(--qnet-orange);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1, .hero-title {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+  
+  h3 {
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 480px) {
+  h1, .hero-title {
+    font-size: 1.5rem; /* 24px */
+  }
+  
+  h2 {
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+/* Form Styles */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--qnet-blue);
+  box-shadow: 0 0 0 3px rgba(0, 88, 163, 0.1);
+}
+
+/* Button Styles */
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Loading Animation */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Gradients */
+.gradient-qnet {
+  background: linear-gradient(135deg, var(--qnet-blue) 0%, var(--qnet-dark-blue) 100%);
+}
+
+.gradient-qnet-orange {
+  background: linear-gradient(135deg, var(--qnet-orange) 0%, #e56b00 100%);
+}
+
+/* Section Spacing */
+section {
+  scroll-margin-top: 80px; /* Account for fixed navbar */
+}
+
+/* Custom shadows */
+.shadow-qnet {
+  box-shadow: 0 10px 25px rgba(0, 88, 163, 0.15);
+}
+
+.shadow-qnet-orange {
+  box-shadow: 0 10px 25px rgba(255, 127, 0, 0.15);
 }
