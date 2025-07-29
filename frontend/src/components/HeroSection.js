@@ -37,37 +37,37 @@ const HeroSection = () => {
             <span className="block mt-2 text-orange-300">Sin inventario, sin límites geográficos, con productos premiados.</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button 
               onClick={() => scrollToSection("productos")}
-              className="hero-btn-primary bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-all duration-300 transform hover:scale-105"
+              className="hero-btn-primary bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-xl font-bold text-xl flex items-center gap-3 transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
               Descubrí Más
-              <ArrowRight size={20} />
+              <ArrowRight size={24} />
             </button>
             
             <button 
               onClick={() => scrollToSection("unete")}
-              className="hero-btn-secondary border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg flex items-center gap-2 transition-all duration-300"
+              className="hero-btn-secondary border-3 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-5 rounded-xl font-bold text-xl flex items-center gap-3 transition-all duration-300 shadow-2xl"
             >
               Únete Hoy
-              <Play size={16} />
+              <Play size={18} />
             </button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400">25+</div>
-              <div className="text-gray-300">Países</div>
+          {/* Stats - Enhanced visibility */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-10 border-t-2 border-white/30">
+            <div className="text-center bg-black/30 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl md:text-5xl font-black text-orange-400 mb-2 drop-shadow-lg">25+</div>
+              <div className="text-white font-semibold text-lg">Países</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400">20+</div>
-              <div className="text-gray-300">Años de Experiencia</div>
+            <div className="text-center bg-black/30 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl md:text-5xl font-black text-orange-400 mb-2 drop-shadow-lg">20+</div>
+              <div className="text-white font-semibold text-lg">Años de Experiencia</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-orange-400">1M+</div>
-              <div className="text-gray-300">Distribuidores Activos</div>
+            <div className="text-center bg-black/30 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl md:text-5xl font-black text-orange-400 mb-2 drop-shadow-lg">1M+</div>
+              <div className="text-white font-semibold text-lg">Distribuidores Activos</div>
             </div>
           </div>
         </div>
