@@ -87,7 +87,6 @@ export const testimonials = [
 export const compensationPlan = {
   membership: {
     cost: "USD $30",
-    period: "por año",
     benefits: [
       "Acceso a todos los productos con descuento",
       "Comisiones por ventas directas",
@@ -101,12 +100,12 @@ export const compensationPlan = {
     { level: "Nivel 3", percentage: "10%", description: "Tercer nivel" },
     { level: "Nivel 4+", percentage: "8%", description: "Niveles adicionales" }
   ],
-  rankBonuses: [
-    { rank: "Bronce", bonus: "$100", requirements: "5 ventas directas" },
-    { rank: "Plata", bonus: "$500", requirements: "20 ventas + 2 líderes" },
-    { rank: "Oro", bonus: "$2,000", requirements: "50 ventas + 5 líderes" },
-    { rank: "Diamante", bonus: "$10,000", requirements: "100 ventas + 10 líderes" }
-  ]
+  motivationalMessage: {
+    title: "Conoce el Plan de Carrera",
+    subtitle: "Te sorprenderás lo espectacular que es, binario por derrame",
+    mainMessage: "EL MOMENTO ES AHORA, TOMA TU LUGAR EN LA RED",
+    callToAction: "Únete ahora y ten un lugar de privilegio en AMÉRICA"
+  }
 };
 
 export const upcomingEvents = [
