@@ -1,6 +1,6 @@
 import React from "react";
 import { compensationPlan } from "../mockData";
-import { DollarSign, TrendingUp, Award, Users } from "lucide-react";
+import { DollarSign, TrendingUp, Award, Users, Star, Trophy } from "lucide-react";
 
 const CompensationPlan = () => {
   return (
@@ -24,11 +24,8 @@ const CompensationPlan = () => {
               <span className="text-4xl font-bold">
                 {compensationPlan.membership.cost}
               </span>
-              <span className="text-lg opacity-80">
-                {compensationPlan.membership.period}
-              </span>
             </div>
-            <p className="text-lg opacity-90">Membresía Anual</p>
+            <p className="text-lg opacity-90">Inversión Inicial</p>
           </div>
         </div>
 
@@ -37,7 +34,7 @@ const CompensationPlan = () => {
           <div className="bg-white rounded-lg p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
               <Award className="text-orange-500" size={28} />
-              Beneficios Incluidos
+              Beneficios de Socios
             </h3>
             <ul className="space-y-4">
               {compensationPlan.membership.benefits.map((benefit, index) => (
@@ -69,30 +66,53 @@ const CompensationPlan = () => {
           </div>
         </div>
 
-        {/* Rank Bonuses */}
-        <div className="bg-white rounded-lg p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-            <Users className="text-purple-500" size={28} />
-            Bonos por Rango de Liderazgo
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {compensationPlan.rankBonuses.map((rank, index) => {
-              const colors = ['bg-amber-100 border-amber-300', 'bg-gray-100 border-gray-300', 'bg-yellow-100 border-yellow-300', 'bg-blue-100 border-blue-300'];
-              return (
-                <div key={index} className={`${colors[index]} border-2 rounded-lg p-6 text-center`}>
-                  <h4 className="text-xl font-bold text-gray-900 mb-2">{rank.rank}</h4>
-                  <div className="text-3xl font-bold text-green-600 mb-3">{rank.bonus}</div>
-                  <p className="text-sm text-gray-600">{rank.requirements}</p>
-                </div>
-              );
-            })}
+        {/* Motivational Message Section */}
+        <div className="bg-gradient-to-r from-blue-900 via-purple-900 to-blue-800 rounded-lg p-8 md:p-12 text-center text-white relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10">
+              <Star size={64} className="text-orange-400" />
+            </div>
+            <div className="absolute bottom-10 right-10">
+              <Trophy size={64} className="text-orange-400" />
+            </div>
+            <div className="absolute top-20 right-20">
+              <Users size={48} className="text-orange-400" />
+            </div>
           </div>
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300">
-            Descargar Plan Completo
-          </button>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-orange-400">
+              {compensationPlan.motivationalMessage.title}
+            </h3>
+            <p className="text-lg md:text-xl mb-6 text-blue-100">
+              {compensationPlan.motivationalMessage.subtitle}
+            </p>
+            
+            <div className="my-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+              <h4 className="text-3xl md:text-4xl font-black mb-4 text-orange-300 tracking-wide">
+                {compensationPlan.motivationalMessage.mainMessage}
+              </h4>
+              <p className="text-xl md:text-2xl font-semibold text-white">
+                {compensationPlan.motivationalMessage.callToAction}
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('unete');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                ¡ÚNETE AHORA!
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                Descargar Plan Completo
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
